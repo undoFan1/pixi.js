@@ -161,7 +161,7 @@ export default class CanvasRenderer extends AbstractRenderer
                     renderTexture.height,
                     renderTexture.resolution
                 );
-                renderTexture.source = renderTexture._canvasRenderTarget.canvas;
+                renderTexture.resource = renderTexture._canvasRenderTarget.canvas;
                 renderTexture.valid = true;
             }
 
@@ -191,7 +191,7 @@ export default class CanvasRenderer extends AbstractRenderer
                 transform.copyTo(tempWt);
 
                 // lets not forget to flag the parent transform as dirty...
-                this._tempDisplayObjectParent.transform._worldID = -1;
+                this._tempDisplayObjectParent.transform._parentID = -1;
             }
             else
             {
